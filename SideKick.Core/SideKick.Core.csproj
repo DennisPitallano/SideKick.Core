@@ -6,7 +6,7 @@
     <Description>Simple C# datatype conversions an validation helper</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/DennisPitallano/SideKick.Core</PackageProjectUrl>
-    <PackageIcon>superhero.png</PackageIcon>
+    <PackageIcon>sidekick.png</PackageIcon>
     <RepositoryUrl>https://github.com/DennisPitallano/SideKick.Core</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Helper,Utilities,C#,.NET Core, Extensions,Common Functions,DataType,Convertions,Validations</PackageTags>
@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="superhero.png">
+    <None Include="sidekick.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
