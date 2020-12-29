@@ -41,8 +41,8 @@ namespace SideKick.Core.Validation
 
             value = value.Replace("-", "").Replace(" ", "");
 
-            int checksum = 0;
-            bool evenDigit = false;
+            var checksum = 0;
+            var evenDigit = false;
             // http://www.beachnet.com/~hstiles/cardtype.html
             foreach (char digit in value.ToCharArray().Reverse())
             {
@@ -51,7 +51,7 @@ namespace SideKick.Core.Validation
                     return false;
                 }
 
-                int digitValue = (digit - '0') * (evenDigit ? 2 : 1);
+                var digitValue = (digit - '0') * (evenDigit ? 2 : 1);
                 evenDigit = !evenDigit;
 
                 while (digitValue > 0)
