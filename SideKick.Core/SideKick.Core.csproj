@@ -12,10 +12,10 @@
     <PackageTags>Helper,Utilities,C#,.NET Core, Extensions,Common Functions,DataType,Convertions,Validations</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>List of commonly use C# object conveters and validations</PackageReleaseNotes>
-    <AssemblyVersion>1.0.0.1</AssemblyVersion>
-    <FileVersion>1.0.0.1</FileVersion>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
     <NeutralLanguage />
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -38,6 +38,14 @@ namespace SideKick.Core.Validation
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
+        public static bool IsFloatNumber(this string value)
+            => float.TryParse(value, out _);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static bool IsBoolean(this string value)
             => bool.TryParse(value, out var _);
 
