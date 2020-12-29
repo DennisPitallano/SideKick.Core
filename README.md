@@ -1,3 +1,2 @@
 # SideKick.Core [![Nuget](https://img.shields.io/nuget/v/SideKick.Core)](https://www.nuget.org/packages/SideKick.Core) [![Nuget](https://img.shields.io/nuget/dt/SideKick.Core)](https://www.nuget.org/packages/SideKick.Core)
- ![SideKick]()  Flyweight C# datatype conversions an validation helper.
-
+ <img src="https://raw.githubusercontent.com/DennisPitallano/SideKick.Core/master/SideKick.Core/superhero.png" alt="SideKick" style="zoom:25%;" />  Flyweight C# datatype conversions an validation helper.
