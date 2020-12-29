@@ -1,7 +1,6 @@
 ﻿using Humanizer;
 using System;
 using System.Globalization;
-using Humanizer.Localisation;
 
 namespace SideKick.Core.Helper
 {
@@ -11,29 +10,16 @@ namespace SideKick.Core.Helper
         /// Relative formatting of DateTime (e.g. 2 hours ago, a month ago)
         /// </summary>
         /// <param name="source">Source (UTC format)</param>
-        /// <param name="languageCode">Language culture code</param>
         /// <returns>Formatted date and time string</returns>
-        public static string RelativeFormat(this DateTime source, string languageCode = "en-US")
+        public static string RelativeFormat(this DateTime source)
         {
-            var ts = new TimeSpan(DateTime.UtcNow.Ticks - source.Ticks);
-            var delta = ts.TotalSeconds;
-
-            CultureInfo culture;
-            try
-            {
-                culture = new CultureInfo(languageCode);
-            }
-            catch (CultureNotFoundException)
-            {
-                culture = new CultureInfo("en-US");
-            }
-            return TimeSpan.FromSeconds(delta).Humanize(precision: 1, culture: culture, maxUnit: TimeUnit.Year);
+            return source.Humanize();
         }
 
         public static int GetYearsFromDate(this DateTime date)
         {
             var now = DateTime.UtcNow;
-            int years = now.Year - date.Year;
+            var years = now.Year - date.Year;
 
             if ((date.Month > now.Month) || (date.Month == now.Month && date.Day > now.Day))
                 years--;

@@ -1,4 +1,5 @@
 ﻿using Xunit;
+using SideKick.Core.Converter;
 
 namespace SideKick.Core.Tests.Converter
 {

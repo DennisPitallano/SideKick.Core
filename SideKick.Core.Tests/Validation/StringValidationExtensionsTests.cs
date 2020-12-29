@@ -5,15 +5,21 @@ namespace SideKick.Core.Tests.Validation
 {
     public class StringValidationExtensionsTests
     {
-        [Fact()]
+        [Fact]
         public void IsNumberTest()
         {
-            Assert.True("1234567890".IsNumber(),"Valid Number");
-            Assert.False("~!@#$%^&*()_+".IsNumber());
-            Assert.False("qwertyuiop[]asdfghjkl;'zxcvbnm,./".IsNumber());
+            //Act
+            var validNumberInString = "1234567890".IsNumber();
+            var notValidNumber = "~!@#$%^&*()_+".IsNumber();
+            var keyBoards = "qwertyuiop[]asdfghjkl;'zxcvbnm,./".IsNumber();
+
+            //Assert
+            Assert.True(validNumberInString,"Valid Number");
+            Assert.False(notValidNumber,"Special characters");
+            Assert.False(keyBoards,"Keyboards");
         }
 
-        [Fact()]
+        [Fact]
         public void IsWholeNumberTest()
         {
             Assert.True(false, "This test needs an implementation");
