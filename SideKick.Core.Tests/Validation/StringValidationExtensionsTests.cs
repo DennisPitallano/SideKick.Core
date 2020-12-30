@@ -22,19 +22,28 @@ namespace SideKick.Core.Tests.Validation
         [Fact]
         public void IsWholeNumberTest()
         {
-            Assert.True(false, "This test needs an implementation");
+            Assert.False("102.9".IsWholeNumber(), "This test needs an implementation");
+            Assert.True("102".IsWholeNumber(), "This test needs an implementation");
         }
 
         [Fact()]
         public void IsDecimalNumberTest()
         {
-            Assert.True(false, "This test needs an implementation");
+            Assert.True("33.33".IsDecimalNumber(), "This test needs an implementation");
         }
 
         [Fact()]
         public void IsBooleanTest()
         {
-            Assert.True(false, "This test needs an implementation");
+            Assert.True("true".IsBoolean(), "This test needs an implementation");
+            Assert.True("True".IsBoolean(), "This test needs an implementation");
+            Assert.True("TRUE".IsBoolean(), "This test needs an implementation");
+            Assert.True("False".IsBoolean(), "This test needs an implementation");
+            Assert.True("false".IsBoolean(), "This test needs an implementation");
+            Assert.True("FALSE".IsBoolean(), "This test needs an implementation");
+            Assert.True("1".IsBoolean(), "This test needs an implementation");
+            Assert.True("0".IsBoolean(), "This test needs an implementation");
+            Assert.False("2".IsBoolean(), "This test needs an implementation");
         }
 
         [Fact()]

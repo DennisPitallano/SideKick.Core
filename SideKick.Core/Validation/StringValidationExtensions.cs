@@ -15,7 +15,7 @@ namespace SideKick.Core.Validation
         /// <param name="value"></param>
         /// <returns>True if string value is valid number/numeric else False.</returns>
         public static bool IsNumber(this string value)
-            => Regex.IsMatch(value, @"^\d+$");
+            => value.All(char.IsNumber);
 
         /// <summary>
         /// 
@@ -31,6 +31,7 @@ namespace SideKick.Core.Validation
         /// <param name="value"></param>
         /// <returns></returns>
         public static bool IsDecimalNumber(this string value)
+            // => value.All(char.IsDigit);
             => decimal.TryParse(value, out _);
 
         /// <summary>
@@ -47,25 +48,12 @@ namespace SideKick.Core.Validation
         /// <param name="value"></param>
         /// <returns></returns>
         public static bool IsBoolean(this string value)
-            => bool.TryParse(value, out var _);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static bool IsValidEmailFormat(this string value)
         {
-            if (string.IsNullOrEmpty(value)) { return false; }
-
-            // only return true if there is only 1 '@' character
-            // and it is neither the first nor the last character
-            int index = value.IndexOf('@');
-
-            return
-                index > 0 &&
-                index != value.Length - 1 &&
-                index == value.LastIndexOf('@');
+            if (value.IsNumber())
+            {
+                return value.ToInt16()==1 || value.ToInt16()==0;
+            }
+            return bool.TryParse(value, out var _);
         }
 
         /// <summary>
@@ -176,5 +164,6 @@ namespace SideKick.Core.Validation
         /// <returns></returns>
         public static bool IsAlphaNumericStrict(this string value)
             => value.All(c => (c >= 48 && c <= 57 || c >= 65 && c <= 90 || c >= 97 && c <= 122));
+
     }
 }

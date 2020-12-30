@@ -581,17 +581,6 @@ namespace SideKick.Core.Helper
         }
 
         /// <summary>
-        /// Obsolete. This method has been renamed to FirstDayOfWeek to be more consistent with existing conventions.
-        /// </summary>
-        /// <param name="dateTime"></param>
-        /// <returns></returns>
-        [Obsolete("This method has been renamed to FirstDayOfWeek to be more consistent with existing conventions.")]
-        public static DateTime StartOfWeek(this DateTime dateTime)
-        {
-            return FirstDayOfWeek(dateTime);
-        }
-
-        /// <summary>
         /// Returns the first day of the year keeping the time component intact. Eg, 2011-02-04T06:40:20.005 => 2011-01-01T06:40:20.005
         /// </summary>
         /// <param name="current">The DateTime to adjust</param>
