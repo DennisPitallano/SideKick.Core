@@ -57,7 +57,15 @@ namespace SideKick.Core.Tests.Converter
         [Fact()]
         public void ToBooleanTest()
         {
-            Assert.True(false, "This test needs an implementation");
+            Assert.True("true".ToBoolean(), "This test needs an implementation");
+            Assert.True("True".ToBoolean(), "This test needs an implementation");
+            Assert.True("TRUE".ToBoolean(), "This test needs an implementation");
+            Assert.False("False".ToBoolean(), "This test needs an implementation");
+            Assert.False("false".ToBoolean(), "This test needs an implementation");
+            Assert.False("FALSEw".ToBoolean(), "This test needs an implementation");
+            Assert.True("1".ToBoolean(), "This test needs an implementation");
+            Assert.False("0".ToBoolean(), "This test needs an implementation");
+            Assert.False("2".ToBoolean(), "Invalid");
         }
 
         [Fact()]
@@ -69,7 +77,8 @@ namespace SideKick.Core.Tests.Converter
         [Fact()]
         public void ToDecimalTest()
         {
-            Assert.True(false, "This test needs an implementation");
+            var expected = 13.90;
+            Assert.Equal((decimal)expected, "13.90".ToDecimal());
         }
 
         [Fact()]
@@ -111,7 +120,9 @@ namespace SideKick.Core.Tests.Converter
         [Fact()]
         public void ToCamelCaseTest()
         {
-            Assert.True(false, "This test needs an implementation");
+            var lowercase = "camelcase".ToCamelCase();
+
+            Assert.Equal("camelCase",lowercase);
         }
     }
 }

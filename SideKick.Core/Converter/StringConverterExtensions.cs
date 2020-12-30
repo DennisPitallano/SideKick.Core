@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Text;
+using SideKick.Core.Validation;
 
 namespace SideKick.Core.Converter
 {
@@ -68,7 +69,13 @@ namespace SideKick.Core.Converter
         /// <param name="value"></param>
         /// <returns></returns>
         public static bool ToBoolean(this string value)
-            => bool.TryParse(value, out var result) ? result : default;
+        {
+            if (value.IsNumber())
+            {
+               return value.ToInt16()==1;
+            }
+           return bool.TryParse(value, out var result) ? result : default;
+        }
 
         /// <summary>
         /// 
