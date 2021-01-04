@@ -692,5 +692,33 @@ namespace SideKick.Core.Helper
             return current.Year == date.Year;
         }
 
+        /// <summary>
+        /// Check if given <see cref="DayOfWeek"/> value is weekend.
+        /// </summary>
+        public static bool IsWeekend(this DayOfWeek dayOfWeek)
+        {
+            return dayOfWeek.IsIn(DayOfWeek.Saturday, DayOfWeek.Sunday);
+        }
+
+        /// <summary>
+        /// Check if given <see cref="DayOfWeek"/> value is weekday.
+        /// </summary>
+        public static bool IsWeekday(this DayOfWeek dayOfWeek)
+        {
+            return dayOfWeek.IsIn(DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday);
+        }
+
+        public static DateTime ClearTime(this DateTime dateTime)
+        {
+            return dateTime.Subtract(
+                new TimeSpan(
+                    0,
+                    dateTime.Hour,
+                    dateTime.Minute,
+                    dateTime.Second,
+                    dateTime.Millisecond
+                )
+            );
+        }
     }
 }
