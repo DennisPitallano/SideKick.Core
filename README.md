@@ -81,6 +81,12 @@ Decimal Value: 123.90
 //datetime validators
 bool IsValidDateTime(this DateTime? date)
 bool IsValidDateTime(this DateTime date)
+bool IsBefore(this DateTime current, DateTime toCompareWith)
+bool IsAfter(this DateTime current, DateTime toCompareWith)
+bool IsWeekend(this DayOfWeek dayOfWeek)
+bool IsWeekday(this DayOfWeek dayOfWeek)
+bool IsInFuture(this DateTime dateTime)
+bool IsInPast(this DateTime dateTime)
 
 //string value validators
 bool IsNumber(this string value)
@@ -103,10 +109,16 @@ bool IsIPv6Address(this string value)
 bool IsIPAddress(this string value)
 bool IsValidUrl(this string value)
 bool IsValidDomain(this string value)
+bool IsNullOrEmpty(this string str)
+bool IsNullOrWhiteSpace(this string str)
+
+//Collection validators
+bool IsNullOrEmpty<T>([CanBeNull] this ICollection<T> source)
+
 
 ```
 
-#### Helpers
+#### DateTime Helpers
 
 ```c#
 //DateTime Helpers
@@ -151,8 +163,6 @@ DateTime SetDate(this DateTime value, int year, int month, int day)
 DateTime SetYear(this DateTime value, int year)
 DateTime SetMonth(this DateTime value, int month)
 DateTime SetDay(this DateTime value, int day)
-bool IsBefore(this DateTime current, DateTime toCompareWith)
-bool IsAfter(this DateTime current, DateTime toCompareWith)
 DateTime At(this DateTime current, int hour, int minute)
 DateTime At(this DateTime current, int hour, int minute, int second)
 DateTime At(this DateTime current, int hour, int minute, int second, int milliseconds)
@@ -162,8 +172,6 @@ DateTime LastDayOfQuarter(this DateTime current)
 DateTime LastDayOfMonth(this DateTime current)
 DateTime AddBusinessDays(this DateTime current, int days)
 DateTime SubtractBusinessDays(this DateTime current, int days)
-bool IsInFuture(this DateTime dateTime)
-bool IsInPast(this DateTime dateTime)
 DateTime Round(this DateTime dateTime, RoundTo rt)
 DateTime FirstDayOfWeek(this DateTime dateTime)
 DateTime FirstDayOfYear(this DateTime current)
@@ -174,9 +182,44 @@ DateTime NextMonth(this DateTime current)
 bool SameDay(this DateTime current, DateTime date)
 bool SameMonth(this DateTime current, DateTime date)
 bool SameYear(this DateTime current, DateTime date)
-//String Helpers	=> coming soon...
 //Number Helpers	=> coming soon...
 ```
+
+#### String Helpers
+
+```c#
+string EnsureEndsWith(this string str, char c, StringComparison comparisonType = StringComparison.Ordinal)
+string EnsureStartsWith(this string str, char c, StringComparison comparisonType = StringComparison.Ordinal)
+string Left(this string str, int len)
+string Right(this string str, int len)
+string NormalizeLineEndings(this string str)
+int NthIndexOf(this string str, char c, int n)
+string RemovePostFix(this string str, params string[] postFixes)
+string RemovePostFix(this string str, StringComparison comparisonType, params string[] postFixes)
+string RemovePreFix(this string str, params string[] preFixes)
+string RemovePreFix(this string str, StringComparison comparisonType, params string[] preFixes)
+string ReplaceFirst(this string str, string search, string replace, StringComparison comparisonType = StringComparison.Ordinal)
+string[] Split(this string str, string separator)
+string[] Split(this string str, string separator, StringSplitOptions options)
+string[] SplitToLines(this string str)
+string Truncate(this string str, int maxLength)
+string TruncateFromBeginning(this string str, int maxLength)
+string TruncateWithPostfix(this string str, int maxLength)
+string TruncateWithPostfix(this string str, int maxLength, string postfix)
+byte[] GetBytes(this string str)
+byte[] GetBytes([NotNull] this string str, [NotNull] Encoding encoding)
+```
+
+#### Collection Helpers
+
+```c#
+IEnumerable<T> AddIfNotContains<T>([NotNull] this ICollection<T> source, IEnumerable<T> items)
+bool AddIfNotContains<T>([NotNull] this ICollection<T> source, [NotNull] Func<T, bool> predicate, [NotNull] Func<T> itemFactory)
+bool AddIfNotContains<T>([NotNull] this ICollection<T> source, T item)
+IList<T> RemoveAll<T>([NotNull] this ICollection<T> source, Func<T, bool> predicate)
+```
+
+
 
 #### Conversions
 
@@ -200,7 +243,13 @@ string ToBase64Decode(this string value)
 byte[] ToByteFromBase64CharArray(this string value)
 byte[] ToByteArray(this string value)
 string ToDateTimeFormat(this string date, string format)
-string ToCamelCase(this string value)
+T ToEnum<T>(this string value)
+T ToEnum<T>(this string value, bool ignoreCase)
+string ToMd5(this string str)
+string ToCamelCase(this string str, bool useCurrentCulture = false)
+string ToSentenceCase(this string str, bool useCurrentCulture = false)
+string ToKebabCase(this string str, bool useCurrentCulture = false)
+string ToPascalCase(this string str, bool useCurrentCulture = false)
 ```
 
 

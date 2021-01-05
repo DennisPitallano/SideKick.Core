@@ -165,5 +165,21 @@ namespace SideKick.Core.Validation
         public static bool IsAlphaNumericStrict(this string value)
             => value.All(c => (c >= 48 && c <= 57 || c >= 65 && c <= 90 || c >= 97 && c <= 122));
 
+        /// <summary>
+        /// indicates whether this string is null, empty, or consists only of white-space characters.
+        /// </summary>
+        public static bool IsNullOrWhiteSpace(this string str)
+        {
+            return string.IsNullOrWhiteSpace(str);
+        }
+
+        /// <summary>
+        /// Indicates whether this string is null or an System.String.Empty string.
+        /// </summary>
+        public static bool IsNullOrEmpty(this string str)
+        {
+            return string.IsNullOrEmpty(str);
+        }
+
     }
 }
