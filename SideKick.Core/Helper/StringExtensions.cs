@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
+using SideKick.Core.Validation;
 
 namespace SideKick.Core.Helper
 {

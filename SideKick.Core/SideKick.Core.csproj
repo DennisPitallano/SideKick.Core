@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Authors>Dennis Pitallano</Authors>
-    <Description>Simple C# datatype conversions an validation helper</Description>
+    <Description>Flyweight C# library for your .NET Core Applications. You can use this library to perform commonly use conversions, validations, and other object helpers.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/DennisPitallano/SideKick.Core</PackageProjectUrl>
     <PackageIcon>sidekick.png</PackageIcon>
@@ -12,10 +12,10 @@
     <PackageTags>Helper,Utilities,C#,.NET Core, Extensions,Common Functions,DataType,Convertions,Validations</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>List of commonly use C# object conveters and validations</PackageReleaseNotes>
-    <AssemblyVersion>1.0.0.2</AssemblyVersion>
-    <FileVersion>1.0.0.2</FileVersion>
+    <AssemblyVersion>1.0.0.3</AssemblyVersion>
+    <FileVersion>1.0.0.3</FileVersion>
     <NeutralLanguage />
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
