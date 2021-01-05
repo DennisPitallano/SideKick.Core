@@ -1,24 +1,29 @@
 # SideKick.Core [![Nuget](https://img.shields.io/nuget/v/SideKick.Core?style=flat-square&logo=nuget)](https://www.nuget.org/packages/SideKick.Core) [![Nuget](https://img.shields.io/nuget/dt/SideKick.Core?style=flat-square)](https://www.nuget.org/packages/SideKick.Core)
+
  <img src="https://raw.githubusercontent.com/DennisPitallano/SideKick.Core/master/SideKick.Core/sidekick.png" alt="SideKick" height="100" style="zoom:25%;" />  Flyweight C# library for your .NET Core Applications. You can use this library to perform commonly use conversions, validations, and other object helpers.
+
+## This Project has been supported by [JetBrains](https://www.jetbrains.com/shop/eform/opensource)！
+
+<img src="https://www.jetbrains.com/shop/static/images/jetbrains-logo-inv.svg" height="100"> 
 
 # Installation
 
 1. Download and Install the latest `SideKick.Core` from [NuGet](https://www.nuget.org/packages/SideKick.Core/) using Package Manager, CLI or by adding it to Package Reference:
-
+   
    ```
    <PackageReference Include="SideKick.Core" Version="1.0.3" />
    ```
-
+   
    ```
    dotnet add package SideKick.Core --version 1.0.3
    ```
-
+   
    ```
    PM> Install-Package SideKick.Core -Version 1.0.3
    ```
 
 2. Import the following namespace in the class:
-
+   
    ```c#
    using SideKick.Core;
    ```
@@ -51,7 +56,7 @@ if (myEmailAddress.IsValidEmailAddress())
 ```c#
 //import 
 using SideKick.Core.Helper;
- 
+
 var myBirthDate = new DateTime(1990,12,2);
 Console.WriteLine($"I was born {myBirthDate.RelativeFormat()}.");
 
@@ -70,8 +75,6 @@ Console.WriteLine($"Decimal Value: {strNumber.ToDecimal()}");
 //output
 Decimal Value: 123.90
 ```
-
-
 
 # List of Available Extension
 
@@ -114,8 +117,6 @@ bool IsNullOrWhiteSpace(this string str)
 
 //Collection validators
 bool IsNullOrEmpty<T>([CanBeNull] this ICollection<T> source)
-
-
 ```
 
 #### DateTime Helpers
@@ -182,7 +183,7 @@ DateTime NextMonth(this DateTime current)
 bool SameDay(this DateTime current, DateTime date)
 bool SameMonth(this DateTime current, DateTime date)
 bool SameYear(this DateTime current, DateTime date)
-//Number Helpers	=> coming soon...
+//Number Helpers    => coming soon...
 ```
 
 #### String Helpers
@@ -219,8 +220,6 @@ bool AddIfNotContains<T>([NotNull] this ICollection<T> source, T item)
 IList<T> RemoveAll<T>([NotNull] this ICollection<T> source, Func<T, bool> predicate)
 ```
 
-
-
 #### Conversions
 
 ```c#
@@ -252,9 +251,6 @@ string ToKebabCase(this string str, bool useCurrentCulture = false)
 string ToPascalCase(this string str, bool useCurrentCulture = false)
 ```
 
-
-
 # Attribution
 
 <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
