@@ -6,15 +6,15 @@
 1. Download and Install the latest `SideKick.Core` from [NuGet](https://www.nuget.org/packages/SideKick.Core/) using Package Manager, CLI or by adding it to Package Reference:
 
    ```
-   <PackageReference Include="SideKick.Core" Version="1.0.2" />
+   <PackageReference Include="SideKick.Core" Version="1.0.3" />
    ```
 
    ```
-   dotnet add package SideKick.Core --version 1.0.2
+   dotnet add package SideKick.Core --version 1.0.3
    ```
 
    ```
-   PM> Install-Package SideKick.Core -Version 1.0.2
+   PM> Install-Package SideKick.Core -Version 1.0.3
    ```
 
 2. Import the following namespace in the class:
