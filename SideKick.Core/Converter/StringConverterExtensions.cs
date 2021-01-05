@@ -141,19 +141,5 @@ namespace SideKick.Core.Converter
         /// <returns></returns>
         public static string ToDateTimeFormat(this string date, string format)
             => date.ToDateTime().ToString(format, CultureInfo.InvariantCulture);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static string ToCamelCase(this string value)
-        {
-            if (!string.IsNullOrEmpty(value) && value.Length > 1)
-            {
-                return char.ToLowerInvariant(value[0]) + value.Substring(1);
-            }
-            return value;
-        }
     }
 }

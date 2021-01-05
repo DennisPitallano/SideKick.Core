@@ -46,21 +46,7 @@ namespace SideKick.Core.Helper
             return c + str;
         }
 
-        /// <summary>
-        /// Indicates whether this string is null or an System.String.Empty string.
-        /// </summary>
-        public static bool IsNullOrEmpty(this string str)
-        {
-            return string.IsNullOrEmpty(str);
-        }
-
-        /// <summary>
-        /// indicates whether this string is null, empty, or consists only of white-space characters.
-        /// </summary>
-        public static bool IsNullOrWhiteSpace(this string str)
-        {
-            return string.IsNullOrWhiteSpace(str);
-        }
+      
 
         /// <summary>
         /// Gets a substring of a string from beginning of the string.

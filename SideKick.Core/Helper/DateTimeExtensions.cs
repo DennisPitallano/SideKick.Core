@@ -344,32 +344,7 @@ namespace SideKick.Core.Helper
         {
             return new DateTime(value.Year, value.Month, day, value.Hour, value.Minute, value.Second, value.Millisecond, value.Kind);
         }
-
-        /// <summary>
-        /// Determines whether the specified <see cref="DateTime"/> is before then current value.
-        /// </summary>
-        /// <param name="current">The current value.</param>
-        /// <param name="toCompareWith">Value to compare with.</param>
-        /// <returns>
-        /// 	<c>true</c> if the specified current is before; otherwise, <c>false</c>.
-        /// </returns>
-        public static bool IsBefore(this DateTime current, DateTime toCompareWith)
-        {
-            return current < toCompareWith;
-        }
-
-        /// <summary>
-        /// Determines whether the specified <see cref="DateTime"/> value is After then current value.
-        /// </summary>
-        /// <param name="current">The current value.</param>
-        /// <param name="toCompareWith">Value to compare with.</param>
-        /// <returns>
-        /// 	<c>true</c> if the specified current is after; otherwise, <c>false</c>.
-        /// </returns>
-        public static bool IsAfter(this DateTime current, DateTime toCompareWith)
-        {
-            return current > toCompareWith;
-        }
+      
 
         /// <summary>
         /// Returns the given <see cref="DateTime"/> with hour and minutes set At given values.
@@ -487,26 +462,6 @@ namespace SideKick.Core.Helper
         public static DateTime SubtractBusinessDays(this DateTime current, int days)
         {
             return AddBusinessDays(current, -days);
-        }
-
-        /// <summary>
-        /// Determine if a <see cref="DateTime"/> is in the future.
-        /// </summary>
-        /// <param name="dateTime">The date to be checked.</param>
-        /// <returns><c>true</c> if <paramref name="dateTime"/> is in the future; otherwise <c>false</c>.</returns>
-        public static bool IsInFuture(this DateTime dateTime)
-        {
-            return dateTime > DateTime.Now;
-        }
-
-        /// <summary>
-        /// Determine if a <see cref="DateTime"/> is in the past.
-        /// </summary>
-        /// <param name="dateTime">The date to be checked.</param>
-        /// <returns><c>true</c> if <paramref name="dateTime"/> is in the past; otherwise <c>false</c>.</returns>
-        public static bool IsInPast(this DateTime dateTime)
-        {
-            return dateTime < DateTime.Now;
         }
 
         /// <summary>
@@ -690,22 +645,6 @@ namespace SideKick.Core.Helper
         public static bool SameYear(this DateTime current, DateTime date)
         {
             return current.Year == date.Year;
-        }
-
-        /// <summary>
-        /// Check if given <see cref="DayOfWeek"/> value is weekend.
-        /// </summary>
-        public static bool IsWeekend(this DayOfWeek dayOfWeek)
-        {
-            return dayOfWeek.IsIn(DayOfWeek.Saturday, DayOfWeek.Sunday);
-        }
-
-        /// <summary>
-        /// Check if given <see cref="DayOfWeek"/> value is weekday.
-        /// </summary>
-        public static bool IsWeekday(this DayOfWeek dayOfWeek)
-        {
-            return dayOfWeek.IsIn(DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday);
         }
 
         public static DateTime ClearTime(this DateTime dateTime)
